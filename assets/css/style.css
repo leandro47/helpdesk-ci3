@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+.tela-centro {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+}
+
+b {
+	font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+	font-family: 'Roboto', sans-serif;
+}
+
+a {
+	font-family: 'Roboto', sans-serif;
+}
+
+.fundo-login {
+	background: rgb(34, 193, 195);
+	background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(236, 244, 246, 1) 100%);
+}
