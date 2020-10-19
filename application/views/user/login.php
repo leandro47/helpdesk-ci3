@@ -4,14 +4,14 @@ defined('BASEPATH') or exit('URL inválida.');
 
 <?php $this->load->view('includes/head'); ?>
 
-<body class="fundo-login">
-    <!-- Login Content -->
-    <div class="container tela-centro">
+<!-- Login Content -->
+<div class="container-login">
+    <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-12 col-md-9">
             <div class="card shadow-sm my-5">
                 <div class="card-body p-0">
                     <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-lg-12">
                             <div class="login-form">
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Login</h1>
@@ -46,7 +46,6 @@ defined('BASEPATH') or exit('URL inválida.');
                                     <button type="submit" class="btn btn-info btn-block">Entrar</button>
                                 </div>
                                 <?php echo form_close(); ?>
-
                                 <hr>
                             </div>
                         </div>
@@ -54,13 +53,10 @@ defined('BASEPATH') or exit('URL inválida.');
                 </div>
             </div>
         </div>
-
     </div>
-
-
-    <!-- Importa outras views complementares  -->
-    <?php $this->load->view('includes/footer'); ?>
-    <?php $this->load->view('includes/scripts'); ?>
+</div>
+<!-- Login Content -->
+<?php $this->load->view('includes/scripts'); ?>
 
 </body>
 
