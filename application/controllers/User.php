@@ -7,7 +7,7 @@ class User extends CI_Controller
 	{
 		parent::__construct();
 
-		if ($this->session->has_userdata('name')) {
+		if ($this->session->has_userdata('nome')) {
 			redirect('welcome');
 		}
 
@@ -19,6 +19,7 @@ class User extends CI_Controller
 	{
 		$this->load->view('user/login', $this->data);
 	}
+
 	public function login()
 	{
 		if ($this->input->post()) {
@@ -33,7 +34,7 @@ class User extends CI_Controller
 					$this->session->set_userdata(
 						array(
 							'id'    => $result->id,
-							'name'  => $result->name,
+							'nome'  => $result->nome,
 							'login' => $result->login,
 						)
 					);
@@ -50,13 +51,14 @@ class User extends CI_Controller
 			}
 		}
 	}
+
 	public function logout()
 	{
 		//faz o logout do usuário
-		if ($this->session->has_userdata('name')) {
+		if ($this->session->has_userdata('nome')) {
 			//destroi os dados da sessão                
 			$this->session->unset_userdata('id');
-			$this->session->unset_userdata('name');
+			$this->session->unset_userdata('nome');
 			$this->session->unset_userdata('login');
 
 			redirect('welcome');
@@ -64,59 +66,5 @@ class User extends CI_Controller
 			redirect('welcome');
 		}
 	}
-	public function newUser()
-	{
-		$this->data['page'] = 'Criar Conta';
-		$this->load->view('user/register', $this->data);
-	}
-	public function insertUser()
-	{
-		$this->data['page'] = 'Criar Conta';
 
-		if ($this->input->post()) {
-
-			$this->form_validation->set_rules('text_name_complete', 'nome completo', 'required', array('required' => 'o campo %s é obrigatorio'));
-			$this->form_validation->set_rules('text_username', 'login', 'required', array('required' => 'o campo %s é obrigatorio'));
-			$this->form_validation->set_rules('text_password', 'senha', 'required', array('required' => 'o campo %s é obrigatorio'));
-			$this->form_validation->set_rules('text_password2', 'validar senha', 'required', array('required' => 'o campo %s é obrigatorio'));
-
-			if ($this->form_validation->run() === false) {
-
-				$this->load->view('user/register', $this->data);
-			} else {
-				if (!$this->user->checkUser($this->input->post("text_username", true))) {
-
-					// Verifica se os campos senha são igual
-					if ($this->input->post('text_password', true) === $this->input->post('text_password2', true)) {
-
-						//Cria conta de usuario
-						if ($this->user->insert(
-							$this->input->post('text_name_complete', true),
-							$this->input->post('text_username', true),
-							md5($this->input->post('text_password', true))
-						)) {
-
-							// usuario incluso com sucesso 
-							$this->data['statusMessage'] = 'success';
-							$this->data['message'] = 'Usuário incluso com sucesso';
-							$this->load->view('user/login', $this->data);
-						} else {
-							$this->data['statusMessage'] = 'danger';
-							$this->data['message'] = 'Aconteceu um erro ao inserir o usuario, tente novamente';
-							$this->load->view('user/register', $this->data);
-						}
-					} else {
-						$this->data['statusMessage'] = 'warning';
-						$this->data['message'] = 'As senhas não corresponde';
-						$this->load->view('user/register', $this->data);
-					}
-				} else {
-
-					//Usuario já existe
-					$this->data['message'] = 'Já existe um usuário com esse mesmo login';
-					$this->load->view('user/register', $this->data);
-				}
-			}
-		}
-	}
 }

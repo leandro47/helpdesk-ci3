@@ -48,11 +48,6 @@ defined('BASEPATH') or exit('URL inválida.');
                                 <?php echo form_close(); ?>
 
                                 <hr>
-                                <div class="text-center">
-                                    <a class="font-weight-bold text-info text small" href="<?= site_url('user/newuser') ?>">Create an Account!</a>
-                                </div>
-                                <div class="text-center">
-                                </div>
                             </div>
                         </div>
                     </div>

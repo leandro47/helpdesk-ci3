@@ -8,16 +8,18 @@ class Welcome extends CI_Controller
     {
         parent::__construct();
 
-        if (!$this->session->has_userdata('name')) {
+        if (!$this->session->has_userdata('nome')) {
             redirect('User');
         }
 
-        $this->data['page'] = 'Dashboard';
-        // $this->load->model('User_Model', 'user');
+        $this->data['page'] = 'Inicio';
+  
     }
 
     public function index()
-    { 
+    {
         $this->load->view('application/dashboard', $this->data);
     }
+
+    
 }
