@@ -40,7 +40,7 @@ defined('BASEPATH') or exit('URL inválida.');
                         <input type="password" class="form-control" name="text_password" required id="text_password" placeholder="Senha">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-1 btn-block">Entrar</button>
+                        <button type="submit" class="btn btn-2 btn-block">Entrar</button>
                     </div>
                     <?php echo form_close(); ?>
                     <hr>
