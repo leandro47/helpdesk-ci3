@@ -1,0 +1,23 @@
+.background-login {
+	min-height: 100vh;
+	width: 100%;
+	left: 0;
+	top: 250;
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../assets/img/login/wallpaper.jpg') repeat;
+	background-position: center top;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.btn-1{
+    background: #590d82;
+    color: white;
+}
+
+.tela-centro {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
