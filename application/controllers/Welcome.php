@@ -13,6 +13,7 @@ class Welcome extends CI_Controller
         }
 
         $this->data['page'] = 'Inicio';
+        $this->data['username'] = $this->session->nome;
   
     }
 
