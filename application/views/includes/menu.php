@@ -4,25 +4,25 @@ defined('BASEPATH') or exit('URL inválida.');
 
 <div id="wrapper">
   <!-- Sidebar -->
-  <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+  <ul class="navbar-nav sidebar bg-5 accordion" id="accordionSidebar">
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
       <div class="sidebar-brand-icon">
         <img src="<?= base_url('assets/img/logo/logo2.png') ?>">
       </div>
-      <div class="sidebar-brand-text mx-3">HelpDesk</div>
+      <div class="sidebar-brand-text menu-text mx-3">HelpDesk</div>
     </a>
     <hr class="sidebar-divider my-0">
     <li class="nav-item active">
-      <a class="nav-link" href="index.html">
+      <a class="nav-link menu-item" href="index.html">
         <i class="fas fa-home"></i>
         <span>Inicio</span></a>
     </li>
     <hr class="sidebar-divider">
-    <div class="sidebar-heading">
+    <div class="sidebar-heading menu-text">
       Opções
     </div>
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap" aria-expanded="true" aria-controls="collapseBootstrap">
+      <a class="nav-link collapsed menu-item" href="#" data-toggle="collapse" data-target="#collapseBootstrap" aria-expanded="true" aria-controls="collapseBootstrap">
         <i class="fas fa-ticket-alt"></i>
         <span>Chamados</span>
       </a>
@@ -37,17 +37,23 @@ defined('BASEPATH') or exit('URL inválida.');
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="ui-colors.html">
+      <a class="nav-link menu-item" href="ui-colors.html">
         <i class="fas fa-address-book"></i>
         <span>Administrativo</span>
       </a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link menu-item" href="ui-colors.html">
+      <i class="far fa-file-pdf"></i>
+        <span>Relatórios</span>
+      </a>
+    </li>
     <hr class="sidebar-divider">
-    <div class="sidebar-heading">
+    <div class="sidebar-heading menu-text">
       Configurações
     </div>
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true" aria-controls="collapsePage">
+      <a class="nav-link collapsed menu-item" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true" aria-controls="collapsePage">
         <i class="fas fa-fw fa-columns"></i>
         <span>Usuários</span>
       </a>
@@ -67,7 +73,7 @@ defined('BASEPATH') or exit('URL inválida.');
   <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
       <!-- TopBar -->
-      <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+      <nav class="navbar navbar-expand bg-2 topbar mb-4 static-top">
         <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
           <i class="fa fa-bars"></i>
         </button>
@@ -79,7 +85,7 @@ defined('BASEPATH') or exit('URL inválida.');
             </a>
             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
               <h6 class="dropdown-header">
-                Alerts Center
+               Notificações
               </h6>
               <a class="dropdown-item d-flex align-items-center" href="#">
                 <div class="mr-3">
@@ -114,7 +120,6 @@ defined('BASEPATH') or exit('URL inválida.');
                   Spending Alert: We've noticed unusually high spending for your account.
                 </div>
               </a>
-              <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
             </div>
           </li>
 
@@ -139,17 +144,17 @@ defined('BASEPATH') or exit('URL inválida.');
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+              <h5 class="modal-title" id="exampleModalLabelLogout">Isso é um adeus?!</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              <p>Are you sure you want to logout?</p>
+              <p>Tem certeza que deseja sair?</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-              <a href="<?= site_url('user/logout'); ?>" class="btn btn-3">Logout</a>
+              <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Não</button>
+              <a href="<?= site_url('user/logout'); ?>" class="btn btn-3">Sim</a>
             </div>
           </div>
         </div>

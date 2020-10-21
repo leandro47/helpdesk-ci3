@@ -7,21 +7,27 @@ class User extends CI_Controller
 	{
 		parent::__construct();
 
-		if ($this->session->has_userdata('nome')) {
-			redirect('welcome');
-		}
-
 		$this->data['page'] = 'Login';
 		$this->load->model('User_Model', 'user');
 	}
 
+	private function verificaSessao()
+	{
+		if ($this->session->has_userdata('nome')) {
+			redirect('welcome');
+		}
+	}
+
 	public function index()
 	{
+		$this->verificaSessao();
 		$this->load->view('user/login', $this->data);
 	}
 
 	public function login()
 	{
+		$this->verificaSessao();
+
 		if ($this->input->post()) {
 
 			$this->form_validation->set_rules('text_name_user', 'nome de usuário', 'required', array('required' => 'o campo %s é obrigatorio'));
@@ -66,5 +72,4 @@ class User extends CI_Controller
 			redirect('welcome');
 		}
 	}
-
 }

@@ -9,6 +9,7 @@
     background-size: cover;
 }
 
+/* botões  */
 .btn-1 {
     background: #0c056d;
     color: white;
@@ -35,4 +36,38 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Backgrounds  */
+.bg-1 {
+    background-color: #0c056d !important;
+}
+
+.bg-2 {
+    background-color: #590d82 !important;
+}
+
+.bg-3 {
+    background-color: #b61aae !important;
+}
+
+.bg-4 {
+    background-color: #f25d9c !important;
+}
+
+.bg-5{
+    background-color: #202020 !important;
+}
+
+/* textos  */
+
+.menu-text{
+    color: gray !important;
+}
+
+.menu-item{
+    color: white !important;
+}
+.menu-item:hover{
+    color:  #f25d9c !important;;
 }
