@@ -22,5 +22,9 @@ class Welcome extends CI_Controller
         $this->load->view('application/dashboard', $this->data);
     }
 
+    public function getTicketsMonth(){
+        response([]);
+    }
+
     
 }

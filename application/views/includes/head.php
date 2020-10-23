@@ -19,5 +19,9 @@ defined('BASEPATH') or exit('URL inválida.');
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/css/styles.css') ?>">
 
+    <script>
+        const BASE_URL = "<?= base_url('') ?>"
+    </script>
 </head>
+
 <body id="page-top">

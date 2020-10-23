@@ -10,6 +10,7 @@
 }
 
 /* botões  */
+
 .btn-1 {
     background: #0c056d;
     color: white;
@@ -39,6 +40,7 @@
 }
 
 /* Backgrounds  */
+
 .bg-1 {
     background-color: #0c056d !important;
 }
@@ -55,19 +57,39 @@
     background-color: #f25d9c !important;
 }
 
-.bg-5{
+.bg-5 {
     background-color: #202020 !important;
 }
 
 /* textos  */
 
-.menu-text{
+.menu-text {
     color: gray !important;
 }
 
-.menu-item{
+.menu-item {
     color: white !important;
 }
-.menu-item:hover{
-    color:  #f25d9c !important;;
+
+.menu-item:hover {
+    color: #f25d9c !important;
+    ;
+}
+
+/* tipografica */
+
+.text-1 {
+    color: #0c056d !important;
+}
+
+.text-2 {
+    color: #590d82 !important;
+}
+
+.text-3 {
+    color: #b61aae !important;
+}
+
+.text-4 {
+    color: #f25d9c !important;
 }
