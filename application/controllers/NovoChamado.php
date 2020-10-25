@@ -9,12 +9,15 @@ class NovoChamado extends CI_Controller
         parent::__construct();
 
         $this->data['page'] = 'Novo chamado';
-  
     }
 
     public function index()
     {
         $this->load->view('chamado/novo', $this->data);
     }
-
+    
+    public function chamado()
+    {
+        $this->load->view('chamado/escreverchamado', $this->data);
+    }
 }

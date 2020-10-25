@@ -9,6 +9,11 @@
     background-size: cover;
 }
 
+.background-gradiente-inputchamado {
+    background: rgb(89,13,130);
+    background: linear-gradient(0deg, rgb(242, 242, 242) 0%, rgb(240, 240, 240) 100%);
+}
+
 /* botões  */
 
 .btn-1 {
@@ -92,4 +97,83 @@
 
 .text-4 {
     color: #f25d9c !important;
+}
+
+.div-centro {
+    height: 80vh;
+    width: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-chamado {
+    min-height: 90vh;
+    width: 100%;
+    left: 0;
+    top: 250;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('../../assets/img/chamado/wallpaper.jpg') repeat;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* pulse button  */
+
+.pulsingButton {
+    width: 220px;
+    text-align: center;
+    white-space: nowrap;
+    display: block;
+    margin: 50px auto;
+    padding: 10px;
+    box-shadow: 0 0 0 0 rgba(232, 76, 61, 0.7);
+    border-radius: 10px;
+    background-color: #f25d9c;
+    -webkit-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulsing 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    font-size: 22px;
+    font-weight: normal;
+    font-family: sans-serif;
+    text-decoration: none !important;
+    color: #ffffff;
+    transition: all 300ms ease-in-out;
+}
+
+/* Comment-out to have the button continue to pulse on mouseover */
+
+a.pulsingButton:hover {
+    -webkit-animation: none;
+    -moz-animation: none;
+    -ms-animation: none;
+    animation: none;
+    color: #ffffff;
+}
+
+/* Animation */
+
+@-webkit-keyframes pulsing {
+    to {
+        box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+}
+
+@-moz-keyframes pulsing {
+    to {
+        box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+}
+
+@-ms-keyframes pulsing {
+    to {
+        box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
+}
+
+@keyframes pulsing {
+    to {
+        box-shadow: 0 0 0 30px rgba(232, 76, 61, 0);
+    }
 }

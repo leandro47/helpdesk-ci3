@@ -7,7 +7,7 @@ defined('BASEPATH') or exit('URL inválida.');
   <ul class="navbar-nav sidebar bg-5 accordion" id="accordionSidebar">
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
       <div class="sidebar-brand-icon">
-        <img src="<?= base_url('assets/img/logo/logo2.png') ?>">
+        <img src="<?= base_url('assets/img/logo/logo.png') ?>">
       </div>
       <div class="sidebar-brand-text menu-text mx-3">HelpDesk</div>
     </a>

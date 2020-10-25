@@ -4,16 +4,19 @@ defined('BASEPATH') or exit('URL inválida.');
 
 <?php $this->load->view('includes/head') ?>
 
-<div class="container-fluid bg-2" style="height: 100vh;">
-<div class="row align-items-center">
-    <div class="col">
-      One of three columns
+<nav class="navbar navbar-dark btn-3">
+  <a class="navbar-brand" href="#">
+    <img src="<?= base_url('assets/img/logo/logo.png') ?>" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+    HelpDesk
+  </a>
+</nav>
+
+<div class="container-fluid background-chamado">
+  <div class="row">
+    <div class="col-sm div-centro">
+      <a class="pulsingButton" href="<?= site_url('novochamado/chamado') ?>" role="button">Novo chamado</a>
     </div>
-    <div class="col align-self-center">
-      One of three columns
-    </div>
-    <div class="col">
-      One of three columns
+    <div class="col-sm">
     </div>
   </div>
 </div>
