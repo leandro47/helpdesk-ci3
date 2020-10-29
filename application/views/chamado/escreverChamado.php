@@ -21,58 +21,78 @@ defined('BASEPATH') or exit('URL inválida.');
             <div class="card mb-4">
 
                 <div class="card-body">
-                    <form>
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-4">Onde e quem?</h6>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="inputFilial">Qual é a filial</label>
-                                    <select class="form-control" id="inputFilial">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="inputDepartamento">Departamento</label>
-                                    <select class="form-control" id="inputDepartamento">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label for="inputNome">Seu nome</label>
-                                    <input class="form-control form-control-lg mb-3" type="text" id="inputNome" placeholder="Ex: João da Silva">
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <hr>
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-4">Agora precisamos saber oque aconteceu!</h6>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputTitulo">É sobre oque?</label>
-                                    <input class="form-control form-control-lg mb-3" type="text" id="inputTitulo" placeholder="Ex: Estou sem internet">
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputDetalhes">Agora um pouco mais de detalhes...</label>
-                                    <textarea class="form-control" id="inputDetalhes" rows="3"></textarea>
-                                </div>
-                            </div>
+                    <?php echo form_open('novochamado/abrirChamado'); ?>
+                    <div class="row">
+                        <div class="col-sm-12">
 
+                            <!-- Validação de formulario  -->
+                            <?php if (validation_errors()) : ?>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <?php echo validation_errors(); ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <?php endif; ?>
+
+                            <!-- Message in login of user-->
+                            <?php if (isset($message)) : ?>
+                            <div class="alert alert-<?= $statusMessage ?> alert-dismissible fade show" role="alert">
+                                <?php echo $message; ?>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <?php endif; ?>
+
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-4">Onde e quem?</h6>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputFilial">Qual é a filial</label>
+                                <select class="form-control" id="inputFilial" name="inputFilial">
+                                    <?php foreach ($filiais as $filial) : ?>
+                                    <option value="<?= $filial['id'] ?>"><?= $filial['descricao'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputDepartamento">Departamento</label>
+                                <select class="form-control" id="inputDepartamento" name="inputDepartamento">
+                                    <?php foreach ($departamentos as $departamento) : ?>
+                                    <option value="<?= $departamento['id'] ?>"><?= $departamento['descricao'] ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="inputNome">Seu nome</label>
+                                <input class="form-control form-control-lg mb-3" type="text" id="inputNome" name="inputNome" required placeholder="Ex: João da Silva">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <hr>
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-4">Agora precisamos saber oque aconteceu!</h6>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputTitulo">É sobre oque?</label>
+                                <input class="form-control form-control-lg mb-3" type="text" id="inputTitulo" required name="inputTitulo" placeholder="Ex: Estou sem internet">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDetalhes">Agora um pouco mais de detalhes...</label>
+                                <textarea class="form-control" id="inputDetalhes" name="inputDetalhes" required rows="3"></textarea>
+                            </div>
                         </div>
 
-                        <button type="submit" class="btn btn-3">Abrir chamado</button>
-                    </form>
+                    </div>
+                    <button type="submit" class="btn btn-3">Abrir chamado</button>
+                    <?php echo form_close(); ?>
                 </div>
             </div>
         </div>
